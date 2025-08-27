@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Multi-Section Demo Page</title>
+	<style>
+		body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+		header, section, footer { max-width: 800px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+		h1, h2 { color: #2c3e50; }
+		ul, ol { margin-left: 2rem; }
+		table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+		th, td { border: 1px solid #ccc; padding: 0.5rem; text-align: left; }
+		th { background: #eaeaea; }
+		fieldset { border: 1px solid #bbb; border-radius: 6px; margin-bottom: 1.5rem; padding: 1rem; }
+		legend { font-weight: bold; color: #34495e; }
+		label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+		input, select, textarea { width: 100%; padding: 0.5rem; margin-bottom: 1rem; border-radius: 4px; border: 1px solid #ccc; }
+		button { background: #2980b9; color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+		button:hover { background: #3498db; }
+		.media { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+		.media img, .media video, .media audio { max-width: 300px; border-radius: 6px; }
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Lists, Tables, Media & Forms Assignment</h1>
+		<p>This page demonstrates the use of lists, tables, media elements, and a complete HTML5 form with accessibility and validation features.</p>
+	</header>
+
+	<main>
+		<section>
+			<h2>Lists</h2>
+			<h3>Unordered List</h3>
+			<ul>
+				<li>HTML5 Semantic Elements</li>
+				<li>CSS Styling</li>
+				<li>Accessibility Features</li>
+			</ul>
+			<h3>Ordered List</h3>
+			<ol>
+				<li>Plan Structure</li>
+				<li>Design Layout</li>
+				<li>Implement Features</li>
+			</ol>
+			<h3>Description List</h3>
+			<dl>
+				<dt>HTML</dt>
+				<dd>Markup language for web pages.</dd>
+				<dt>CSS</dt>
+				<dd>Styles and layouts for web pages.</dd>
+				<dt>Form</dt>
+				<dd>User input collection tool.</dd>
+			</dl>
+		</section>
+
+		<section>
+			<h2>Table</h2>
+			<table>
+				<caption>Sample Data Table</caption>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Role</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Oluwashola Oyewole</td>
+						<td>Programmer</td>
+						<td>oyewoleshola5@gmail.com</td>
+					</tr>
+					<tr>
+						<td>Tim Berners-Lee</td>
+						<td>Inventor</td>
+						<td>tim@example.com</td>
+					</tr>
+					<tr>
+						<td>Grace Hopper</td>
+						<td>Scientist</td>
+						<td>grace@example.com</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+
+		<section>
+			<h2>Media</h2>
+			<div class="media">
+				<img src="Sir-tbl.jpg" alt="Tim Berners-Lee" title="Tim Berners-Lee">
+        <br><br>
+				<audio controls>
+					<source src="HEADPHONK.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+        <br><br>
+				<video controls width="300">
+					<source src="Clip.mp4" type="video/mp4">
+					<source src="Clip.ogg" type="video/ogg">
+					Your browser does not support the video tag.
+				</video>
+			</div>
+		</section>
+
+		<section>
+			<h2>Contact Form</h2>
+			<form action="#" method="post" autocomplete="on">
+				<fieldset>
+					<legend>Personal Information</legend>
+					<label for="name">Full Name *</label>
+					<input type="text" id="name" name="name" required minlength="2" maxlength="50" placeholder="Enter your name" autocomplete="name">
+
+					<label for="email">Email Address *</label>
+					<input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email">
+
+					<label for="dob">Date of Birth</label>
+					<input type="date" id="dob" name="dob" min="1900-01-01" max="2025-12-31" autocomplete="bday">
+
+					<label for="readonly-id">Reference ID (readonly)</label>
+					<input type="text" id="readonly-id" name="reference" value="REF2025-001" readonly>
+				</fieldset>
+
+				<fieldset>
+					<legend>Account Details</legend>
+					<label for="username">Username *</label>
+					<input type="text" id="username" name="username" required pattern="[A-Za-z0-9_]{5,15}" title="5-15 letters, numbers, or underscores" placeholder="Choose a username" autocomplete="username">
+
+					<label for="password">Password *</label>
+					<input type="password" id="password" name="password" required minlength="8" maxlength="20" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}" title="8-20 characters, at least one uppercase, one lowercase, and one number" placeholder="Create a password" autocomplete="new-password">
+
+					<label for="confirm">Confirm Password *</label>
+					<input type="password" id="confirm" name="confirm" required minlength="8" maxlength="20" placeholder="Re-enter your password" autocomplete="new-password">
+				</fieldset>
+
+				<fieldset>
+					<legend>Preferences</legend>
+					<label for="color">Favorite Color</label>
+					<input type="color" id="color" name="color" value="#2980b9">
+
+					<label for="country">Country *</label>
+					<select id="country" name="country" required autocomplete="country">
+						<option value="">Select...</option>
+						<option value="ng">Nigeria</option>
+						<option value="uk">United Kingdom</option>
+						<option value="us">United States</option>
+						<option value="other">Other</option>
+					</select>
+
+					<label>Subscribe to newsletter?</label>
+					<input type="radio" id="subscribe-yes" name="subscribe" value="yes">
+					<label for="subscribe-yes">Yes</label>
+					<input type="radio" id="subscribe-no" name="subscribe" value="no" checked>
+					<label for="subscribe-no">No</label>
+
+					<label for="bio">Short Bio</label>
+					<textarea id="bio" name="bio" rows="3" maxlength="200" placeholder="Tell us about yourself"></textarea>
+				</fieldset>
+
+				<button type="submit">Submit</button>
+			</form>
+		</section>
+
+		<section>
+			<h2>Tips</h2>
+			<ul>
+				<li>Use semantic tags like <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;header&gt;</code>, and <code>&lt;footer&gt;</code> for better accessibility and structure.</li>
+				<li>Always label your form fields and group related fields with <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code>.</li>
+				<li>Apply HTML5 validation attributes (<code>required</code>, <code>pattern</code>, <code>minlength</code>, etc.) to improve usability and reduce errors.</li>
+				<li>Use <code>autocomplete</code> and <code>placeholder</code> to help users fill out forms quickly and accurately.</li>
+				<li>Include <code>readonly</code> fields for information that should not be changed by the user.</li>
+			</ul>
+		</section>
+	</main>
+
+	<footer>
+		<p>&copy; 2025. All rights reserved.</p>
+	</footer>
+</body>
+</html>
